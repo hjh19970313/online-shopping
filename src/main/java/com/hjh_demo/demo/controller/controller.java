@@ -29,7 +29,6 @@ public class controller {
     }
 
 
-    @RequestMapping("/logis")
     public String hello(@RequestParam (name = "UserCode") String Usercode,@RequestParam(name = "Password") String Password,ModelMap m1)
     {
        // List<User> userList=userMapper.selectList(null);
