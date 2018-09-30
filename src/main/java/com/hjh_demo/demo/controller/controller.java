@@ -28,7 +28,7 @@ public class controller {
         return "index";
     }
 
-   @RequestMapping("/login")
+   @RequestMapping("/312")
     public String hello(@RequestParam (name = "UserCode") String Usercode,@RequestParam(name = "Password") String Password,ModelMap m1)
     {
        // List<User> userList=userMapper.selectList(null);
