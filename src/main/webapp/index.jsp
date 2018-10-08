@@ -23,7 +23,7 @@
     <fieldset>
     <label style="font-family: '微软雅黑 Light'" >用户名：</label><input name="UserCode" type="text" style="font-family: '微软雅黑 Light'">
     <br>
-    <label style="font-family: '微软雅黑 Light'">密码:</label> <input name="Password" type="text">
+    <label style="font-family: '微软雅黑 Light'"> 密码:</label> <input name="Password" type="text">
     <input type="submit">
     </fieldset>
 </form>

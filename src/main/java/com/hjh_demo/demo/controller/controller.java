@@ -28,29 +28,34 @@ public class controller {
         return "index";
     }
 
-   @RequestMapping("/login")    public String hello(@RequestParam (name = "UserCode") String Usercode,@RequestParam(name = "Password") String Password,ModelMap m1)
-    {
-       // List<User> userList=userMapper.selectList(null);
-
-       // com.baomidou.mybatisplus.mapper.Wrapper wrapper = new EntityWrapper().eq("UserCode",usercode);
+   @RequestMapping("/login")
+   public String hello(@RequestParam (name = "UserCode") String Usercode,@RequestParam(name = "Password") String Password,ModelMap m1) {
 
         User user1=new User();
         user1.setUserCode(Usercode);
-
         User user2 = userMapper.selectOne(user1);
-
-        if(user2.getPassword().equals(Password))
-        {
-            m1.put("UserCode",user2.getUserCode());
-            m1.put("Password",user2.getPassword());
-            m1.put("Gender",user2.getGender());
-            m1.put("Status",user2.getStatus());
-            m1.put("Birthday",user2.getBirthday());
-            return  "hello";
+        if (user2==null) {
+            m1.put("msg","用户名不存在！");
+            return "failure";
         }
+        else {
 
 
-        else  return index();
-    }
+         if(user2.getPassword().equals(Password)) {
+             m1.put("UserCode",user2.getUserCode());
+             m1.put("Password",user2.getPassword());
+             m1.put("Gender",user2.getGender());
+             m1.put("Status",user2.getStatus());
+             m1.put("Birthday",user2.getBirthday());
+              return  "hello";
+         }
+
+
+         else {
+             m1.put("msg","密码不正确！");
+             return "failure";
+         }
+        }
+   }
 
 }
