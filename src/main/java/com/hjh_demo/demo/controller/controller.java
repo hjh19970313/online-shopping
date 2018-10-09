@@ -35,8 +35,7 @@ public class controller {
         user1.setUserCode(Usercode);
         User user2 = userMapper.selectOne(user1);
         if (user2==null) {
-            m1.put("msg","用户名不存在啊！");
-            return "failure";
+            m1.put("msg","用户名不存在hjh！");            return "failure";
         }
         else {
 
