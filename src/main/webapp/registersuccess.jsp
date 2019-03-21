@@ -10,14 +10,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登录失败！</title>
+    <title>注册成功</title>
     <script>
-        window.onload = function () {
-            alert("${msg}");
-            history.back();
+        window.alert("${msg1}")
+        window.onload=function () {
+            window.location.href="index.jsp";
         }
-
     </script>
+
+
 
 </head>
 <style>
